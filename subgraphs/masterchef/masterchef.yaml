@@ -1,16 +1,16 @@
 specVersion: 0.0.3
 description: Masterchef
-repository: https://github.com/sushiswap/sushiswap-subgraph
+repository: https://github.com/BasedSwap/sushiswap-subgraph
 schema:
   file: ./masterchef.graphql
 dataSources:
   - kind: ethereum/contract
     name: MasterChef
-    network: mainnet
+    network: fantom
     source:
-      address: '0xc2edad668740f1aa35e4d8f227fb8e17dca888cd'
+      address: '0xC54E1b5D6E320C5083E695561ce65Cd1fd7D1667'
       abi: MasterChef
-      startBlock: 10736242
+      startBlock: 5464980
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.4

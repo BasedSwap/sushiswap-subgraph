@@ -1,6 +1,6 @@
 specVersion: 0.0.3
 description: Masterchef
-repository: https://github.com/sushiswap/sushiswap-subgraph
+repository: https://github.com/BasedSwap/sushiswap-subgraph
 schema:
   file: ./masterchef.graphql
 dataSources:

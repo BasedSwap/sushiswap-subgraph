@@ -76,15 +76,15 @@ export function getEthRate(token: Address, block: ethereum.Block): BigDecimal {
   return eth
 }
 
-export function getSushiPrice(block: ethereum.Block): BigDecimal {
+export function getuBASEDPrice(block: ethereum.Block): BigDecimal {
   if (block.number.lt(UNISWAP_SUSHI_ETH_PAIR_FIRST_LIQUDITY_BLOCK)) {
-    // If before uniswap sushi-eth pair creation and liquidity added, return zero
+    // If before uniswap ubased-eth pair creation and liquidity added, return zero
     return BIG_DECIMAL_ZERO
   } else if (block.number.lt(BigInt.fromI32(10800029))) {
-    // Else if before uniswap sushi-usdt pair creation (get price from eth sushi-eth pair above)
+    // Else if before uniswap ubased-usdt pair creation (get price from eth ubased-eth pair above)
     return getUSDRate(SUSHI_TOKEN_ADDRESS, block)
   } else {
-    // Else get price from either uni or sushi usdt pair depending on space-time
+    // Else get price from either uni or ubased usdt pair depending on space-time
     const pair = PairContract.bind(
       block.number.le(BigInt.fromI32(10829344)) ? UNISWAP_SUSHI_USDT_PAIR_ADDRESS : SUSHI_USDT_PAIR_ADDRESS
     )
